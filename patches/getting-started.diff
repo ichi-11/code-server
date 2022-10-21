@@ -1,0 +1,19 @@
+Index: code-server/lib/vscode/src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.ts
+===================================================================
+--- code-server.orig/lib/vscode/src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.ts
++++ code-server/lib/vscode/src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.ts
+@@ -758,7 +758,13 @@ export class GettingStartedPage extends 
+ 
+ 		const header = $('.header', {},
+ 			$('h1.product-name.caption', {}, this.productService.nameLong),
+-			$('p.subtitle.description', {}, localize({ key: 'gettingStarted.editingEvolved', comment: ['Shown as subtitle on the Welcome page.'] }, "Editing evolved"))
++			$('p.subtitle.description.coder', {},
++				"Using code-server on a team?",
++			),
++			$('p.subtitle.description.coder', {}, 
++				"Check out: ",
++				$('a.subtitle.description.coder', { href: "https://github.com/coder/coder" }, "coder/coder")
++			),
+ 		);
+ 
+ 
